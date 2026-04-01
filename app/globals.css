@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1A2E5C;
+  --color-blue: #2D7DD2;
+  --color-blue-light: #E8F0FB;
+  --color-bg-base: #F0F4FA;
+  --color-text-muted: #6B7A99;
+  --color-line-green: #06C755;
+  --color-accent: #C9963A;
+
+  --font-sans: 'Noto Sans JP', sans-serif;
+
+  --font-weight-black: 900;
+}
+
+@layer base {
+  html {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #1A2E5C;
+    background-color: #F0F4FA;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
