@@ -1,35 +1,35 @@
-import { AlertCircle, TrendingDown, FileX, Users, DollarSign, HelpCircle } from 'lucide-react'
+import { Clock, SearchX, XCircle, CircleDollarSign, ThumbsDown, HelpCircle } from 'lucide-react'
 
 const troubles = [
   {
-    icon: TrendingDown,
-    title: '社会保険料が年々増えていく',
-    desc: '給与が上がるたびに社会保険料も増加。利益が出ても手元に残らない。',
+    icon: Clock,
+    title: '本業以外に手がつけられない',
+    desc: '本業で手一杯、補助金申請まで手がまわらない。',
   },
   {
-    icon: DollarSign,
-    title: '資金繰りが常に不安定',
-    desc: '売上はあるのに資金が足りない。銀行融資の審査が通るか毎回不安だ。',
+    icon: SearchX,
+    title: '申請対象がないと思っている',
+    desc: '補助金を申請できる対象ではないと思って、申請してない。',
   },
   {
-    icon: FileX,
-    title: '補助金・助成金の情報が多すぎて何から手をつければいいかわからない',
-    desc: '申請の手間が多く、採択されるかもわからないので結局やっていない。',
+    icon: XCircle,
+    title: '複雑で諦めた',
+    desc: '申請を試みたが複雑で諦めた。',
   },
   {
-    icon: Users,
-    title: '人件費が上がり続けている',
-    desc: '最低賃金の引き上げや人材確保のコストで、利益が圧迫されている。',
+    icon: CircleDollarSign,
+    title: '着手金が高い',
+    desc: '代行業者にお願いしようと考えたが、本当に通るかわからないのに高い着手金を払いたくない。',
   },
   {
-    icon: AlertCircle,
-    title: '役員報酬の設計が昔のまま',
-    desc: '設立当初から変えていない。今の状況に合っているのか不安だ。',
+    icon: ThumbsDown,
+    title: '思っていたサポートと違った',
+    desc: '採択後サポートが終了し、入金まで至らなかった。',
   },
   {
     icon: HelpCircle,
-    title: 'AI・DXを導入したいが費用が心配',
-    desc: '業務効率化の必要性は感じているが、まとまった投資ができない。',
+    title: 'その他',
+    desc: 'うまく活用できていない理由は様々。まずはご相談ください。',
   },
 ]
 
@@ -55,6 +55,74 @@ const cashFlowItems = [
     desc: '固定費削減＋資金調達の両輪で、手元資金に余裕のある経営を実現します。',
   },
 ]
+
+function DiagramFigure() {
+  return (
+    <div className="mt-14 mb-2">
+      <p className="text-center text-sm font-bold text-[#2D7DD2] tracking-widest uppercase mb-6">
+        Figure
+      </p>
+      <h3 className="text-center text-xl font-black text-[#1A2E5C] mb-10">
+        なぜ補助金を活用できていないのか
+      </h3>
+
+      {/* Diagram */}
+      <div className="relative flex flex-col items-center">
+        {/* Center circle */}
+        <div className="relative z-10 w-36 h-36 rounded-full bg-gradient-to-br from-[#1A2E5C] to-[#2D7DD2] flex flex-col items-center justify-center text-white shadow-lg mb-0">
+          <span className="text-xs font-bold text-white/70 leading-none">補助金を</span>
+          <span className="text-base font-black leading-snug">活用できない</span>
+          <span className="text-xs font-bold text-white/70 leading-none">理由</span>
+        </div>
+
+        {/* Connector lines + outer boxes */}
+        <div className="w-full max-w-2xl mt-6 grid grid-cols-2 sm:grid-cols-3 gap-4 relative">
+          {/* Vertical line from center down */}
+          <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-px h-6 bg-[#2D7DD2]/40" />
+
+          {troubles.slice(0, 5).map((t, i) => {
+            const Icon = t.icon
+            return (
+              <div
+                key={i}
+                className="bg-white border-2 border-[#E8F0FB] rounded-2xl p-4 flex flex-col items-center text-center gap-2 shadow-sm hover:border-[#2D7DD2] transition-colors"
+              >
+                <div className="w-9 h-9 rounded-full bg-[#E8F0FB] flex items-center justify-center">
+                  <Icon className="text-[#2D7DD2]" size={18} />
+                </div>
+                <p className="text-xs font-black text-[#1A2E5C] leading-snug">{t.title}</p>
+                <p className="text-[10px] text-[#6B7A99] leading-relaxed">{t.desc}</p>
+              </div>
+            )
+          })}
+
+          {/* その他 — spans remaining */}
+          <div className="bg-[#F0F4FA] border-2 border-dashed border-[#C8D8F0] rounded-2xl p-4 flex flex-col items-center text-center gap-2">
+            <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center">
+              <HelpCircle className="text-[#2D7DD2]" size={18} />
+            </div>
+            <p className="text-xs font-black text-[#1A2E5C] leading-snug">その他</p>
+            <p className="text-[10px] text-[#6B7A99] leading-relaxed">
+              うまく活用できていない理由は様々。まずはご相談ください。
+            </p>
+          </div>
+        </div>
+
+        {/* Arrow pointing down */}
+        <div className="mt-8 flex flex-col items-center gap-1">
+          <div className="w-px h-8 bg-[#2D7DD2]/40" />
+          <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[10px] border-t-[#2D7DD2]/60" />
+        </div>
+
+        {/* Solution box */}
+        <div className="mt-4 bg-gradient-to-r from-[#1A2E5C] to-[#2D7DD2] rounded-2xl px-8 py-5 text-white text-center shadow-md max-w-sm w-full">
+          <p className="text-sm font-bold text-white/70 mb-1">Solution</p>
+          <p className="text-base font-black">IDMが伴走してすべて解決します</p>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default function Trouble() {
   return (
@@ -96,7 +164,10 @@ export default function Trouble() {
             })}
           </div>
 
-          <div className="mt-10 text-center">
+          {/* Figure / Diagram */}
+          <DiagramFigure />
+
+          <div className="mt-12 text-center">
             <p className="text-[#1A2E5C] font-bold text-lg">
               それ、制度の使い方次第で解決できるかもしれません。
             </p>
