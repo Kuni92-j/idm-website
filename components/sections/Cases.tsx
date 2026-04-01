@@ -1,7 +1,5 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
 const cases = [
@@ -28,28 +26,12 @@ const cases = [
   },
 ]
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: 'easeOut' as const },
-  }),
-}
-
 export default function Cases() {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-100px' })
-
   return (
     <section id="cases" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          ref={ref}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-        >
-          <motion.div custom={0} variants={fadeUp} className="mb-16 text-center">
+        <div>
+          <div className="mb-16 text-center">
             <span className="text-xs font-bold text-[#2D7DD2] tracking-widest uppercase">
               Cases
             </span>
@@ -59,15 +41,12 @@ export default function Cases() {
             <p className="text-[#6B7A99] max-w-xl mx-auto">
               飲食・医療・建設など幅広い業種で実績を積み重ねてきました。
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {cases.map((c, i) => (
-              <motion.div
+            {cases.map((c) => (
+              <div
                 key={c.badge}
-                custom={i + 1}
-                variants={fadeUp}
-                whileHover={{ y: -4 }}
                 className="bg-[#F0F4FA] rounded-3xl p-7 border border-transparent hover:border-[#2D7DD2]/20 transition-colors"
               >
                 <span className="inline-block bg-[#1A2E5C] text-white text-xs font-bold px-3 py-1.5 rounded-full mb-4">
@@ -92,10 +71,10 @@ export default function Cases() {
                     <p className="text-sm font-bold text-[#1A2E5C]">{c.result}</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

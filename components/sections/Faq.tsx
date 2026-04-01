@@ -1,7 +1,6 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { useState } from 'react'
 import { Plus, Minus } from 'lucide-react'
 
 const faqs = [
@@ -14,6 +13,14 @@ const faqs = [
     a: '初回のヒアリング・診断は完全無料です。提案後に進めるかはご判断いただきます。押し売りや無理な勧誘は一切行いません。',
   },
   {
+    q: '資金繰りの改善にはどのくらいの期間がかかりますか？',
+    a: '社会保険料の適正化は、手続き完了後の翌月から効果が出始めます。補助金は採択後の入金まで数ヶ月かかるケースが多いですが、まずは固定費削減から着手することで早期に資金繰りの改善を実感いただけます。',
+  },
+  {
+    q: '社員数が少ない会社でも相談できますか？',
+    a: '従業員5名以上を目安としていますが、それ以下の規模でもご相談ください。役員報酬の設計見直しや補助金活用は、小規模事業者の方にも有効な場合があります。',
+  },
+  {
     q: '補助金の採択は保証されますか？',
     a: '採択の保証はできません。当社支援実績では95%以上の採択率となっています。審査基準を踏まえた申請書作成で、採択可能性を最大化します。',
   },
@@ -23,16 +30,11 @@ const faqs = [
   },
 ]
 
-function FaqItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
+function FaqItem({ faq }: { faq: typeof faqs[0] }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1, duration: 0.5 }}
-      className="border border-[#E8F0FB] rounded-2xl overflow-hidden bg-white"
-    >
+    <div className="border border-[#E8F0FB] rounded-2xl overflow-hidden bg-white">
       <button
         className="w-full flex items-center justify-between p-6 text-left"
         onClick={() => setOpen(!open)}
@@ -43,67 +45,43 @@ function FaqItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
           </span>
           <span className="font-bold text-[#1A2E5C] leading-relaxed">{faq.q}</span>
         </div>
-        <motion.div
-          animate={{ rotate: open ? 180 : 0 }}
-          transition={{ duration: 0.2 }}
-          className="flex-shrink-0 ml-4"
-        >
+        <div className="flex-shrink-0 ml-4">
           {open ? (
             <Minus className="text-[#2D7DD2]" size={20} />
           ) : (
             <Plus className="text-[#2D7DD2]" size={20} />
           )}
-        </motion.div>
+        </div>
       </button>
 
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            key="content"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="overflow-hidden"
-          >
-            <div className="px-6 pb-6 flex gap-4">
-              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#E8F0FB] text-[#2D7DD2] text-sm font-black flex items-center justify-center">
-                A
-              </span>
-              <p className="text-[#6B7A99] leading-relaxed">{faq.a}</p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+      {open && (
+        <div className="px-6 pb-6 flex gap-4">
+          <span className="flex-shrink-0 w-8 h-8 rounded-full bg-[#E8F0FB] text-[#2D7DD2] text-sm font-black flex items-center justify-center">
+            A
+          </span>
+          <p className="text-[#6B7A99] leading-relaxed">{faq.a}</p>
+        </div>
+      )}
+    </div>
   )
 }
 
 export default function Faq() {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-100px' })
-
   return (
     <section id="faq" className="py-24 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <span className="text-xs font-bold text-[#2D7DD2] tracking-widest uppercase">
             FAQ
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-[#1A2E5C] mt-2">
             よくある質問
           </h2>
-        </motion.div>
+        </div>
 
         <div className="space-y-4">
-          {faqs.map((faq, i) => (
-            <FaqItem key={faq.q} faq={faq} index={i} />
+          {faqs.map((faq) => (
+            <FaqItem key={faq.q} faq={faq} />
           ))}
         </div>
       </div>

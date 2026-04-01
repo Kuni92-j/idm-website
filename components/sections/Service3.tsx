@@ -1,7 +1,5 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
 import { Bot, ArrowRight } from 'lucide-react'
 
 const cases = [
@@ -28,28 +26,12 @@ const cases = [
   },
 ]
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: 'easeOut' as const },
-  }),
-}
-
 export default function Service3() {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-100px' })
-
   return (
     <section className="py-24 bg-[#F0F4FA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          ref={ref}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-        >
-          <motion.div custom={0} variants={fadeUp} className="mb-16 text-center">
+        <div>
+          <div className="mb-16 text-center">
             <span className="text-xs font-bold text-[#2D7DD2] tracking-widest uppercase">
               Service 03
             </span>
@@ -59,15 +41,12 @@ export default function Service3() {
             <p className="text-[#6B7A99] max-w-xl mx-auto">
               助成金を活用することで、研修費用の大半をカバー。実質数万円の負担で社員全員が生成AIを習得できます。
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {cases.map((c, i) => (
-              <motion.div
+            {cases.map((c) => (
+              <div
                 key={c.type}
-                custom={i + 1}
-                variants={fadeUp}
-                whileHover={{ y: -4 }}
                 className="bg-white rounded-3xl p-7 shadow-sm border border-[#E8F0FB]"
               >
                 <div className="flex items-center gap-3 mb-6">
@@ -99,10 +78,10 @@ export default function Service3() {
                   <ArrowRight size={14} />
                   助成金活用で大幅コスト削減
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

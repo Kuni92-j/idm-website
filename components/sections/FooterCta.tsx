@@ -1,14 +1,9 @@
 'use client'
 
-import { useRef } from 'react'
 import Link from 'next/link'
-import { motion, useInView } from 'framer-motion'
 import { MessageCircle, FileText } from 'lucide-react'
 
 export default function FooterCta() {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
-
   return (
     <section
       className="py-24 relative overflow-hidden"
@@ -20,13 +15,7 @@ export default function FooterCta() {
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-white/5 translate-x-1/3 -translate-y-1/3" />
       <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-white/5 -translate-x-1/4 translate-y-1/4" />
 
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
-        className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center text-white"
-      >
+      <div className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center text-white">
         <p className="text-sm font-bold tracking-widest uppercase text-white/70 mb-4">
           無料相談受付中
         </p>
@@ -39,18 +28,16 @@ export default function FooterCta() {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4">
-          <motion.a
+          <a
             href="https://line.me/R/ti/p/@905mbxmt"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-white text-[#06C755] px-8 py-4 rounded-full font-black text-base shadow-lg"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
           >
             <MessageCircle size={20} />
             LINEで無料相談
-          </motion.a>
-          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+          </a>
+          <div>
             <Link
               href="/contact"
               className="flex items-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full font-bold text-base hover:bg-white hover:text-[#2D7DD2] transition-colors"
@@ -58,9 +45,9 @@ export default function FooterCta() {
               <FileText size={20} />
               フォームで問い合わせ
             </Link>
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   )
 }

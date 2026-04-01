@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, MessageCircle } from 'lucide-react'
 
 const navItems = [
@@ -52,17 +51,15 @@ export default function Header() {
 
           {/* LINE CTA */}
           <div className="flex items-center gap-3">
-            <motion.a
+            <a
               href="https://line.me/R/ti/p/@905mbxmt"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex items-center gap-2 bg-[#06C755] text-white px-4 py-2 rounded-full text-sm font-bold"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
             >
               <MessageCircle size={16} />
               LINEで無料相談
-            </motion.a>
+            </a>
 
             {/* Hamburger */}
             <button
@@ -77,41 +74,31 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed top-16 right-0 bottom-0 w-72 bg-white shadow-xl z-50 md:hidden"
-          >
-            <nav className="flex flex-col p-6 gap-6">
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="text-lg font-bold text-[#1A2E5C] hover:text-[#2D7DD2] border-b border-gray-100 pb-4"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <motion.a
-                href="https://line.me/R/ti/p/@905mbxmt"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-[#06C755] text-white px-4 py-3 rounded-full font-bold mt-4"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+      {menuOpen && (
+        <div className="fixed top-16 right-0 bottom-0 w-72 bg-white shadow-xl z-50 md:hidden">
+          <nav className="flex flex-col p-6 gap-6">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="text-lg font-bold text-[#1A2E5C] hover:text-[#2D7DD2] border-b border-gray-100 pb-4"
+                onClick={() => setMenuOpen(false)}
               >
-                <MessageCircle size={18} />
-                LINEで無料相談
-              </motion.a>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                {item.label}
+              </Link>
+            ))}
+            <a
+              href="https://line.me/R/ti/p/@905mbxmt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-[#06C755] text-white px-4 py-3 rounded-full font-bold mt-4"
+            >
+              <MessageCircle size={18} />
+              LINEで無料相談
+            </a>
+          </nav>
+        </div>
+      )}
     </header>
   )
 }

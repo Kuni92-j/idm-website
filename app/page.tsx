@@ -1,5 +1,6 @@
 import Hero from '@/components/sections/Hero'
 import StatsBar from '@/components/sections/StatsBar'
+import Trouble from '@/components/sections/Trouble'
 import Service1 from '@/components/sections/Service1'
 import Service2 from '@/components/sections/Service2'
 import Service3 from '@/components/sections/Service3'
@@ -14,6 +15,7 @@ export default function Home() {
     <>
       <Hero />
       <StatsBar />
+      <Trouble />
       <Service1 />
       <Service2 />
       <Service3 />

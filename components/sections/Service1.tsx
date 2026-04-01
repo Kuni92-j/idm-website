@@ -1,7 +1,5 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
 import { CheckCircle } from 'lucide-react'
 
 const steps = [
@@ -35,29 +33,13 @@ const targets = [
   '複数業態を持つ法人',
 ]
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: 'easeOut' as const },
-  }),
-}
-
 export default function Service1() {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-100px' })
-
   return (
     <section id="service" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          ref={ref}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-        >
+        <div>
           {/* Header */}
-          <motion.div custom={0} variants={fadeUp} className="mb-16 text-center">
+          <div className="mb-16 text-center">
             <span className="text-xs font-bold text-[#2D7DD2] tracking-widest uppercase">
               Service 01
             </span>
@@ -69,16 +51,14 @@ export default function Service1() {
             <p className="text-[#6B7A99] max-w-xl mx-auto">
               法令の範囲内で給与体系・報酬設計を最適化。専門家が一社一社の実態に合わせた提案を行います。
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left: Steps */}
             <div className="space-y-6">
-              {steps.map((step, i) => (
-                <motion.div
+              {steps.map((step) => (
+                <div
                   key={step.num}
-                  custom={i + 1}
-                  variants={fadeUp}
                   className="flex gap-5 items-start"
                 >
                   <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-[#E8F0FB] flex flex-col items-center justify-center">
@@ -89,16 +69,12 @@ export default function Service1() {
                     <p className="font-bold text-[#1A2E5C] mb-1">{step.title}</p>
                     <p className="text-sm text-[#6B7A99]">{step.desc}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
 
             {/* Right: Target Card */}
-            <motion.div
-              custom={5}
-              variants={fadeUp}
-              className="bg-[#E8F0FB] rounded-3xl p-8"
-            >
+            <div className="bg-[#E8F0FB] rounded-3xl p-8">
               <h3 className="text-lg font-black text-[#1A2E5C] mb-6 flex items-center gap-2">
                 <CheckCircle className="text-[#2D7DD2]" size={22} />
                 こんな企業が対象です
@@ -122,9 +98,9 @@ export default function Service1() {
                   提案後に進めるかはご判断に委ねます。押し売り一切なし。
                 </p>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
