@@ -10,7 +10,7 @@ const info = [
   { label: '代表取締役', value: '鈴木邦康' },
   { label: '所在地', value: '〒420-0852 静岡県静岡市葵区紺屋町6-6 ミツヒサ紺屋町ビル1F' },
   { label: '電話番号', value: '054-221-7755' },
-  { label: 'メールアドレス', value: 'idm.inc24@gmail.com' },
+  { label: 'メールアドレス', value: 'support@idminc.jp' },
   { label: '事業内容', value: '社会保険料適正化コンサルティング、補助金・助成金申請支援、生成AI研修' },
   { label: '支援実績', value: '1,000社以上' },
   { label: '補助金採択率', value: '95%以上（当社実績）' },

@@ -10,8 +10,8 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // メール送信: idm.inc24@gmail.com
-    const mailtoLink = `mailto:idm.inc24@gmail.com?subject=${encodeURIComponent(`【お問い合わせ】${formData.company} ${formData.name}様`)}&body=${encodeURIComponent(`会社名: ${formData.company}\nお名前: ${formData.name}\nメールアドレス: ${formData.email}\n\n【お問い合わせ内容】\n${formData.message}`)}`
+    // メール送信: support@idminc.jp
+    const mailtoLink = `mailto:support@idminc.jp?subject=${encodeURIComponent(`【お問い合わせ】${formData.company} ${formData.name}様`)}&body=${encodeURIComponent(`会社名: ${formData.company}\nお名前: ${formData.name}\nメールアドレス: ${formData.email}\n\n【お問い合わせ内容】\n${formData.message}`)}`
     window.location.href = mailtoLink
     setSubmitted(true)
   }
@@ -43,7 +43,7 @@ export default function ContactPage() {
           </div>
           <div className="flex items-center gap-3 text-sm text-[#1A2E5C]">
             <Mail size={16} className="text-[#2D7DD2] flex-shrink-0" />
-            <a href="mailto:idm.inc24@gmail.com" className="hover:text-[#2D7DD2] transition-colors">idm.inc24@gmail.com</a>
+            <a href="mailto:support@idminc.jp" className="hover:text-[#2D7DD2] transition-colors">support@idminc.jp</a>
           </div>
         </div>
 

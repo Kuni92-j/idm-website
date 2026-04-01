@@ -83,11 +83,11 @@ export default function Footer() {
                 054-221-7755
               </a>
               <a
-                href="mailto:idm.inc24@gmail.com"
+                href="mailto:support@idminc.jp"
                 className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
               >
                 <Mail size={15} />
-                idm.inc24@gmail.com
+                support@idminc.jp
               </a>
               <a
                 href="https://line.me/R/ti/p/@905mbxmt"
