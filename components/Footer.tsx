@@ -111,7 +111,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-500">
-            © 2024 IDM株式会社 All Rights Reserved.
+            © 2023 IDM株式会社 All Rights Reserved.
           </p>
           <div className="flex gap-6">
             <Link href="/contact" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
