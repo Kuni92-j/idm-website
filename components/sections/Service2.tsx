@@ -3,9 +3,9 @@
 import { TrendingUp } from 'lucide-react'
 
 const achievementCards = [
-  { industry: '飲食店', amount: '350万円', note: '満額採択' },
-  { industry: '建設業', amount: '350万円', note: '満額採択' },
-  { industry: 'ネイルサロン', amount: '220万円', note: '採択' },
+  { industry: '飲食店', revenue: '年商2,500万円', amount: '350万円', note: '満額採択' },
+  { industry: '建設業', revenue: '年商2億円', amount: '350万円', note: '満額採択' },
+  { industry: 'ネイルサロン', revenue: '年商1,700万円', amount: '220万円', note: '採択' },
 ]
 
 function BarChart() {
@@ -84,6 +84,7 @@ export default function Service2() {
                     <p className="text-lg font-black text-[#1A2E5C] mt-1">
                       {card.industry}
                     </p>
+                    <p className="text-xs text-[#6B7A99] mt-0.5">{card.revenue}</p>
                     <span className="inline-block mt-2 text-xs bg-[#E8F0FB] text-[#2D7DD2] font-bold px-3 py-1 rounded-full">
                       {card.note}
                     </span>
