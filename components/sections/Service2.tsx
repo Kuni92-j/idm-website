@@ -56,7 +56,7 @@ export default function Service2() {
               AI導入補助金サポート
             </h2>
             <p className="text-[#6B7A99] max-w-xl mx-auto">
-              補助金申請の複雑な手続きをワンストップでサポート。全国平均の約2倍の採択率を実現しています。
+              補助金申請の複雑な手続きをワンストップでサポート。<br />全国平均の約2倍の採択率を実現しています。
             </p>
           </div>
 
