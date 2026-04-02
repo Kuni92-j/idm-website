@@ -73,7 +73,7 @@ export default function Hero() {
           <AnimatedHeading lines={['制度を知る企業が、', 'コストで勝つ。']} />
 
           <p className="text-base text-[#6B7A99] leading-relaxed mb-8 max-w-xl">
-            社会保険料の適正化から補助金・助成金の活用まで。複雑な制度を整理し、御社に合った選択肢を提案する伴走型パートナー。
+            社会保険料の適正化から補助金・助成金の活用まで。<br />複雑な制度を整理し、御社に合った選択肢を提案する伴走型パートナー。
           </p>
 
           {/* CTAs */}
