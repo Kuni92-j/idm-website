@@ -114,7 +114,7 @@ export default function Footer() {
             © 2023 IDM株式会社 All Rights Reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="/contact" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
+            <Link href="/privacy" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
               プライバシーポリシー
             </Link>
           </div>
