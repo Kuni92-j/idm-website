@@ -39,7 +39,7 @@ export default function Service3() {
               生成AI研修
             </h2>
             <p className="text-[#6B7A99] max-w-xl mx-auto">
-              助成金を活用することで、研修費用の大半をカバー。実質数万円の負担で社員全員が生成AIを習得できます。
+              助成金を活用することで、研修費用の大半をカバー。<br />実質数万円の負担で社員全員が生成AIを習得できます。
             </p>
           </div>
 
