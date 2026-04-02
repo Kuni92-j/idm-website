@@ -118,7 +118,7 @@ export default function Trouble() {
             <h2 className="text-3xl sm:text-4xl font-black text-[#1A2E5C] mt-2 mb-4">
               資金繰り改善の流れ
             </h2>
-            <p className="text-[#6B7A99] max-w-xl mx-auto">
+            <p className="text-[#6B7A99] whitespace-nowrap mx-auto">
               社会保険料の削減と補助金の活用を組み合わせることで、手元資金を増やす経営へ。
             </p>
           </div>
