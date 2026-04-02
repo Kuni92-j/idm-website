@@ -8,14 +8,14 @@ const cases = [
     scale: '68名・人件費4億円規模',
     issue: '給与体系が複雑で社会保険料の負担が増加',
     proposal: '給与体系の全面見直しと報酬設計の最適化',
-    result: '年間コスト大幅削減・従業員満足度向上',
+    result: '年間コスト大幅削減・従業員満足度向上・還付金額1億円超',
   },
   {
     badge: '歯科医院',
     scale: '20名・人件費1.5億円規模',
     issue: '医療法人の役員報酬設計が非効率',
     proposal: '医療法人特有の報酬体系見直し',
-    result: '社会保険料の適正化と税負担の軽減',
+    result: '社会保険料の適正化と税負担の軽減・還付金額4千万円超',
   },
   {
     badge: '建設業',
@@ -23,6 +23,13 @@ const cases = [
     issue: 'AI導入を検討するも補助金申請が難航',
     proposal: 'IT導入補助金の申請サポート',
     result: '350万円満額採択・DX推進を実現',
+  },
+  {
+    badge: '営業会社',
+    scale: '営業マンの能力の差と管理体制難',
+    issue: '営業スキルにばらつきがあり、成約率・粗利が安定しない',
+    proposal: '助成金活用型AI研修の導入',
+    result: '営業スキルの統一化・成約率と粗利の可視化・販路拡大・助成率75%・節税効果',
   },
 ]
 
@@ -43,7 +50,7 @@ export default function Cases() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {cases.map((c) => (
               <div
                 key={c.badge}
