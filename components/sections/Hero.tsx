@@ -4,47 +4,6 @@ import Link from 'next/link'
 import { MessageCircle, FileText, ChevronDown } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
-/* ── カウントアップ ── */
-function useCountUp(target: number, duration: number = 1500, start: boolean = false) {
-  const [count, setCount] = useState(0)
-  useEffect(() => {
-    if (!start) return
-    let startTime: number | null = null
-    const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp
-      const progress = Math.min((timestamp - startTime) / duration, 1)
-      const eased = 1 - Math.pow(1 - progress, 4)
-      setCount(Math.floor(eased * target))
-      if (progress < 1) requestAnimationFrame(step)
-    }
-    requestAnimationFrame(step)
-  }, [start, target, duration])
-  return count
-}
-
-function StatItem({
-  value, suffix, label, started, delay,
-}: {
-  value: number; suffix: string; label: string; started: boolean; delay: number
-}) {
-  const [active, setActive] = useState(false)
-  useEffect(() => {
-    if (!started) return
-    const t = setTimeout(() => setActive(true), delay)
-    return () => clearTimeout(t)
-  }, [started, delay])
-  const count = useCountUp(value, 1400, active)
-  const display = value >= 1000 ? count.toLocaleString() : count.toString()
-  return (
-    <div className="text-center">
-      <p className="text-3xl sm:text-4xl font-black text-[#1A2E5C]">
-        {display}<span className="text-xl">{suffix}</span>
-      </p>
-      <p className="text-xs text-[#6B7A99] mt-1">{label}</p>
-    </div>
-  )
-}
-
 /* ── 1文字ずつフェードイン ── */
 function AnimatedHeading({ lines }: { lines: string[] }) {
   const [visible, setVisible] = useState(false)
@@ -61,7 +20,6 @@ function AnimatedHeading({ lines }: { lines: string[] }) {
     return () => observer.disconnect()
   }, [])
 
-  // 行をまたいで文字のインデックスを通算する
   let globalIndex = 0
 
   return (
@@ -76,7 +34,7 @@ function AnimatedHeading({ lines }: { lines: string[] }) {
           <span key={li} className="block">
             {chars.map((char) => {
               const idx = globalIndex++
-              const delay = idx * 60 // 1文字60msずつ
+              const delay = idx * 60
               return (
                 <span
                   key={idx}
@@ -87,7 +45,6 @@ function AnimatedHeading({ lines }: { lines: string[] }) {
                     transition: visible
                       ? `opacity 0.5s ease ${delay}ms, transform 0.5s ease ${delay}ms`
                       : 'none',
-                    // 全角スペース・改行が潰れないよう
                     whiteSpace: 'pre',
                   }}
                 >
@@ -104,27 +61,6 @@ function AnimatedHeading({ lines }: { lines: string[] }) {
 
 /* ── メイン ── */
 export default function Hero() {
-  const stats = [
-    { value: 1000, suffix: '社以上',  label: '支援実績' },
-    { value: 5,    suffix: '年',      label: '実績年数' },
-    { value: 95,   suffix: '%以上',   label: '補助金採択率' },
-    { value: 20,   suffix: '業種以上', label: '対応業種数' },
-  ]
-
-  const statsRef = useRef<HTMLDivElement>(null)
-  const [statsStarted, setStatsStarted] = useState(false)
-
-  useEffect(() => {
-    const el = statsRef.current
-    if (!el) return
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); observer.disconnect() } },
-      { threshold: 0.3 }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <section className="relative min-h-screen bg-[#F0F4FA] flex items-center overflow-hidden pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -141,7 +77,7 @@ export default function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-wrap justify-center gap-4 mb-14">
+          <div className="flex flex-wrap justify-center gap-4">
             <a
               href="https://line.me/R/ti/p/@905mbxmt"
               target="_blank"
@@ -158,20 +94,6 @@ export default function Hero() {
               <FileText size={20} />
               フォームで問い合わせ
             </Link>
-          </div>
-
-          {/* Stats */}
-          <div ref={statsRef} className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12">
-            {stats.map((stat, i) => (
-              <StatItem
-                key={stat.label}
-                value={stat.value}
-                suffix={stat.suffix}
-                label={stat.label}
-                started={statsStarted}
-                delay={i * 120}
-              />
-            ))}
           </div>
         </div>
       </div>
