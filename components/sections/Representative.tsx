@@ -17,7 +17,18 @@ export default function Representative() {
           <div className="relative bg-white rounded-3xl p-8 sm:p-10 shadow-sm">
             <Quote className="absolute -top-4 -left-4 text-[#E8F0FB]" size={56} />
             <p className="text-[#1A2E5C] leading-[2] text-base relative z-10">
-              経営者の方から「うちは大丈夫だろうか」とご相談をいただくたびに、私たちは一社一社の実態を丁寧に確認することから始めます。制度は複雑で、正解は会社によって異なります。だからこそ、申請を代行するだけでなく、御社の状況を整理し、活用できる制度を一緒に考える伴走者でありたいと思っています。まず「相談して良かった」と感じていただくこと。それが私たちの出発点です。
+              経営者の方から「うちは大丈夫だろうか」とご相談をいただくたびに、
+              私たちは一社一社の実態を丁寧に確認することから始めます。
+              制度は複雑で、正解は会社によって異なります。だからこそ、
+              申請のサポートをするだけでなく、御社の状況を整理し、
+              活用できる制度を一緒に考える伴走者でありたいと思っています。
+              まず「相談して良かった」と感じていただくこと。それが私たちの出発点です。
+            </p>
+            <p className="text-[#1A2E5C] leading-[2] text-base relative z-10 mt-6">
+              今の時代、AIは今後すべての企業にとって必須のスキルとなり、
+              使いこなした企業こそが競争優位を築く財産になります。
+              AIの導入支援と会社のキャッシュフロー改善、この両面から
+              中小企業を支援できる企業でありたい。それがIDM株式会社の使命です。
             </p>
 
             <div className="mt-8 pt-6 border-t border-[#E8F0FB] flex items-center gap-4">
