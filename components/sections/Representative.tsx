@@ -22,8 +22,8 @@ export default function Representative() {
               まず「相談して良かった」と感じていただくこと。それが私たちの出発点です。
             </p>
             <p className="text-[#1A2E5C] leading-[2] text-base relative z-10 mt-6">
-              今の時代、AIは今後すべての企業にとって必須のスキルとなり、使いこなした企業こそが競争優位を築く財産になります。AIの導入支援と会社のキャッシュフロー<br />
-              改善、この両面から中小企業を支援できる企業でありたい。それがIDM株式会社の使命です。
+              今の時代、AIは今後すべての企業にとって必須のスキルとなり、使いこなした企業こそが競争優位を築く財産になります。<br />
+              AIの導入支援と会社のキャッシュフロー改善、この両面から中小企業を支援できる企業でありたい。それがIDM株式会社の使命です。
             </p>
 
             <div className="mt-8 pt-6 border-t border-[#E8F0FB] flex items-center gap-4">
