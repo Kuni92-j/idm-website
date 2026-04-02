@@ -56,73 +56,6 @@ const cashFlowItems = [
   },
 ]
 
-function DiagramFigure() {
-  return (
-    <div className="mt-14 mb-2">
-      <p className="text-center text-sm font-bold text-[#2D7DD2] tracking-widest uppercase mb-6">
-        Figure
-      </p>
-      <h3 className="text-center text-xl font-black text-[#1A2E5C] mb-10">
-        なぜ補助金を活用できていないのか
-      </h3>
-
-      {/* Diagram */}
-      <div className="relative flex flex-col items-center">
-        {/* Center circle */}
-        <div className="relative z-10 w-36 h-36 rounded-full bg-gradient-to-br from-[#1A2E5C] to-[#2D7DD2] flex flex-col items-center justify-center text-white shadow-lg mb-0">
-          <span className="text-xs font-bold text-white/70 leading-none">補助金を</span>
-          <span className="text-base font-black leading-snug">活用できない</span>
-          <span className="text-xs font-bold text-white/70 leading-none">理由</span>
-        </div>
-
-        {/* Connector lines + outer boxes */}
-        <div className="w-full max-w-2xl mt-6 grid grid-cols-2 sm:grid-cols-3 gap-4 relative">
-          {/* Vertical line from center down */}
-          <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-px h-6 bg-[#2D7DD2]/40" />
-
-          {troubles.slice(0, 5).map((t, i) => {
-            const Icon = t.icon
-            return (
-              <div
-                key={i}
-                className="bg-white border-2 border-[#E8F0FB] rounded-2xl p-4 flex flex-col items-center text-center gap-2 shadow-sm hover:border-[#2D7DD2] transition-colors"
-              >
-                <div className="w-9 h-9 rounded-full bg-[#E8F0FB] flex items-center justify-center">
-                  <Icon className="text-[#2D7DD2]" size={18} />
-                </div>
-                <p className="text-xs font-black text-[#1A2E5C] leading-snug">{t.title}</p>
-                <p className="text-[10px] text-[#6B7A99] leading-relaxed">{t.desc}</p>
-              </div>
-            )
-          })}
-
-          {/* その他 — spans remaining */}
-          <div className="bg-[#F0F4FA] border-2 border-dashed border-[#C8D8F0] rounded-2xl p-4 flex flex-col items-center text-center gap-2">
-            <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center">
-              <HelpCircle className="text-[#2D7DD2]" size={18} />
-            </div>
-            <p className="text-xs font-black text-[#1A2E5C] leading-snug">その他</p>
-            <p className="text-[10px] text-[#6B7A99] leading-relaxed">
-              うまく活用できていない理由は様々。まずはご相談ください。
-            </p>
-          </div>
-        </div>
-
-        {/* Arrow pointing down */}
-        <div className="mt-8 flex flex-col items-center gap-1">
-          <div className="w-px h-8 bg-[#2D7DD2]/40" />
-          <div className="w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[10px] border-t-[#2D7DD2]/60" />
-        </div>
-
-        {/* Solution box */}
-        <div className="mt-4 bg-gradient-to-r from-[#1A2E5C] to-[#2D7DD2] rounded-2xl px-8 py-5 text-white text-center shadow-md max-w-sm w-full">
-          <p className="text-sm font-bold text-white/70 mb-1">Solution</p>
-          <p className="text-base font-black">IDMが伴走してすべて解決します</p>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 export default function Trouble() {
   return (
@@ -163,9 +96,6 @@ export default function Trouble() {
               )
             })}
           </div>
-
-          {/* Figure / Diagram */}
-          <DiagramFigure />
 
           <div className="mt-12 text-center">
             <p className="text-[#1A2E5C] font-bold text-lg">
