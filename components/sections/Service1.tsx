@@ -92,7 +92,7 @@ export default function Service1() {
               <div className="mt-8 p-5 bg-white rounded-2xl border border-[#2D7DD2]/10">
                 <p className="text-xs text-[#6B7A99] mb-1">初回相談</p>
                 <p className="text-xl font-black text-[#1A2E5C]">
-                  完全無料・ノーリスク
+                  完全無料
                 </p>
                 <p className="text-sm text-[#6B7A99] mt-2">
                   提案後に進めるかはご判断に委ねます。押し売り一切なし。
