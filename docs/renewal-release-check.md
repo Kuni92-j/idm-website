@@ -1,6 +1,6 @@
 # IDM homepage release candidate — 2026-10-27
 
-Status: Owner clarified attribution and hypothetical cases on 2026-10-27; awaiting final deployment verification.
+Status: Homepage published at https://www.idminc.jp/ on 2026-10-28 JST. PR #1 merged as b500d3bf72d2622666032f57a5aff15377accb08; Vercel reported success.
 
 ## Scope
 - Approved DESIGN REVIEW 06 HTML preserved as public/idm-home.html.
@@ -30,3 +30,10 @@ Production main unchanged at 273ec63923812584e8f1fe8ca04167a0ce9abe89.
 Backup branch: backup/pre-renewal-20261027.
 After resolving blockers, replace remaining draft caveats with verified public wording, verify production-domain mapping and preview routes, then merge and verify Vercel deployment and idminc.jp.
 If rollback required, revert the release commit; avoid force-pushing main.
+
+## Production verification — 2026-10-28 JST
+- Public / renders the approved green homepage and correct brand heading.
+- Motion pause/resume works; 20-person expense balance displays 2,000,000 yen.
+- Partner-attribution note is present. Contact navigation works, mail-app button and unsent guidance are present; returning via the header logo renders the new home. No inquiry was transmitted.
+- Company and subsidy service pages also updated to partner-attributed results and conditional training fee guidance. Layout on these existing pages is retained.
+- No native iPhone Safari test or email delivery test was performed.

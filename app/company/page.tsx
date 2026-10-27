@@ -12,8 +12,8 @@ const info = [
   { label: '電話番号', value: '054-221-7755' },
   { label: 'メールアドレス', value: 'support@idminc.jp' },
   { label: '事業内容', value: '社会保険料適正化コンサルティング、補助金・助成金申請支援、生成AI研修' },
-  { label: '支援実績', value: '1,000社以上' },
-  { label: '補助金採択率', value: '95%以上（当社実績）' },
+  { label: '支援実績', value: '1,000社以上（提携先を含む）' },
+  { label: '補助金採択率', value: '95%以上（提携先を含む支援実績）' },
 ]
 
 export default function CompanyPage() {
@@ -35,7 +35,7 @@ export default function CompanyPage() {
               <Building2 size={28} />
               <h2 className="text-2xl font-black">IDM株式会社</h2>
             </div>
-            <p className="text-white/80">制度を知る企業が、コストで勝つ。</p>
+            <p className="text-white/80">革新が、経営を動かす。</p>
           </div>
 
           <div className="divide-y divide-gray-100">

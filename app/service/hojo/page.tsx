@@ -28,7 +28,7 @@ export default function HojoPage() {
               <h2 className="text-lg font-black text-[#1A2E5C]">AI導入補助金</h2>
             </div>
             <p className="text-[#6B7A99] text-sm leading-relaxed">
-              当社の補助金採択率は95%以上（全国平均約46%）。複雑な申請書類の作成から審査対策まで、ワンストップでサポートします。
+              提携先を含む支援実績の補助金採択率は95%以上です。採択を保証するものではありません。複雑な申請書類の作成から審査対策まで、ワンストップでサポートします。
             </p>
           </div>
           <div className="bg-white rounded-3xl p-8 shadow-sm">
@@ -37,7 +37,7 @@ export default function HojoPage() {
               <h2 className="text-lg font-black text-[#1A2E5C]">生成AI研修</h2>
             </div>
             <p className="text-[#6B7A99] text-sm leading-relaxed">
-              助成金活用で研修費用の大半をカバー。実質数万円の負担で全社員が生成AIを習得できます。
+              研修料金は1名40万円（税込）を提案基準としています。助成金は対象者・研修内容・支払方法等の要件と審査により支給が決まります。研修内容は業務と目標に合わせて設計します。
             </p>
           </div>
         </div>
