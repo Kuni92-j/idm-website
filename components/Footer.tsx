@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { MessageCircle, Mail, ChevronRight, MapPin, Phone } from 'lucide-react'
 
 export default function Footer() {
@@ -12,7 +11,7 @@ export default function Footer() {
               IDM<span className="text-[#2D7DD2]">株式会社</span>
             </p>
             <p className="text-sm text-gray-400 leading-relaxed">
-              制度を知る企業が、コストで勝つ。社会保険料の適正化から補助金・助成金まで、伴走型でサポートします。
+              革新が、経営を動かす。AI人材育成・制度活用・資金計画を一体で支援します。
             </p>
           </div>
 
@@ -25,16 +24,16 @@ export default function Footer() {
               {[
                 { label: '社会保険料の適正化', href: '/service/shakai' },
                 { label: 'AI導入補助金', href: '/service/hojo' },
-                { label: '生成AI研修', href: '/service/hojo' },
+                { label: '生成AI研修', href: '/#simulation' },
               ].map((item) => (
                 <li key={item.label}>
-                  <Link
+                  <a
                     href={item.href}
                     className="flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors"
                   >
                     <ChevronRight size={14} />
                     {item.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -53,13 +52,13 @@ export default function Footer() {
                 { label: 'よくある質問', href: '/#faq' },
               ].map((item) => (
                 <li key={item.label}>
-                  <Link
+                  <a
                     href={item.href}
                     className="flex items-center gap-1 text-sm text-gray-400 hover:text-white transition-colors"
                   >
                     <ChevronRight size={14} />
                     {item.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -98,13 +97,13 @@ export default function Footer() {
                 <MessageCircle size={15} />
                 LINEで相談する
               </a>
-              <Link
+              <a
                 href="/contact"
                 className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
               >
                 <Mail size={15} />
                 お問い合わせフォーム
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -114,9 +113,9 @@ export default function Footer() {
             © 2023 IDM株式会社 All Rights Reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
+            <a href="/privacy" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
               プライバシーポリシー
-            </Link>
+            </a>
           </div>
         </div>
       </div>

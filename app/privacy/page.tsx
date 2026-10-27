@@ -1,4 +1,3 @@
-import Link from 'next/link'
 
 export const metadata = {
   title: 'プライバシーポリシー | IDM株式会社',
@@ -106,12 +105,12 @@ export default function PrivacyPage() {
         </div>
 
         <div className="mt-10 text-center">
-          <Link
+          <a
             href="/"
             className="inline-flex items-center gap-2 text-[#2D7DD2] font-bold text-sm hover:underline"
           >
             ← トップページへ戻る
-          </Link>
+          </a>
         </div>
       </div>
     </main>

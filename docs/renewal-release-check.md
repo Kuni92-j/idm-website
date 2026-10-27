@@ -1,6 +1,6 @@
 # IDM homepage release candidate — 2026-10-27
 
-Status: NOT RELEASED. Do not merge until the factual questions below are resolved.
+Status: Owner clarified attribution and hypothetical cases on 2026-10-27; awaiting final deployment verification.
 
 ## Scope
 - Approved DESIGN REVIEW 06 HTML preserved as public/idm-home.html.
@@ -19,10 +19,11 @@ Status: NOT RELEASED. Do not merge until the factual questions below are resolve
 - Next preview was unavailable because managed daemon passes Vite --host/--strictPort options to next dev. Used the supported static preview for HTML only. Contact route and root rewrite still require deployed-preview integration verification.
 - Motion toggle click hit a browser input timeout; no new claim of complete animation verification.
 
-## Factual release blockers
-1. Counter claims inherited from old site (1,000+ companies, 5 years, 95%+ selection, 20+ industries): need aggregation period, population and whether IDM or partner/group totals. No evidence added by this change.
-2. Fitness refund >100m yen; dental refund >40m; construction grant 3.5m: need distinguish actual achieved case from maximum illustrative estimate and verify basis. Do not silently label estimates as realized achievements.
-3. Finance remains a hypothetical comparison: 12-hour curriculum, monthly 1.25% converted to 15% APR/365 and round-to-yen are not contractual terms. Need actual lender identity and terms, and eligibility review of lender/training-provider relationship before offering as a confirmed product. Wage aid is separate, not a discount.
+## Owner clarification and public wording
+- Owner confirmed counters include partner results; explicitly attributed at the counter and FAQ. Independently audited counts/denominators are not claimed.
+- Owner confirmed case amounts are hypothetical estimates, not realized outcomes. Changed section to 支援プラン例 and each outcome to 参考試算（実績ではありません）. Removed statements of actual full award and achieved outcomes.
+- Finance remains a hypothetical comparison; no new contractual offer is made. 12-hour curriculum and monthly 1.25% converted to 15% APR/365 are labeled assumptions. Wage aid remains separate. Actual lender terms and program eligibility must be verified for each proposal.
+- Existing-page home links use full document navigation to the static home. Legacy #service bookmark remains supported, new links use #services.
 
 ## Deployment and rollback
 Production main unchanged at 273ec63923812584e8f1fe8ca04167a0ce9abe89.
