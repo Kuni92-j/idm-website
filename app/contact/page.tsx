@@ -77,14 +77,16 @@ export default function ContactPage() {
               <Send className="text-[#2D7DD2]" size={28} />
             </div>
             <h2 className="text-xl font-black text-[#1A2E5C] mb-2">
-              送信が完了しました
+              メールアプリから送信してください
             </h2>
             <p className="text-[#6B7A99]">
-              お問い合わせありがとうございます。2営業日以内にご返信いたします。
+              この時点ではまだ送信されていません。開いたメールアプリで内容を確認し、送信ボタンを押してください。メールアプリが開かない場合は support@idminc.jp またはLINEからご連絡ください。
             </p>
+            <button type="button" onClick={() => setSubmitted(false)} className="mt-6 underline">入力内容に戻る</button>
           </motion.div>
         ) : (
           <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-8 shadow-sm space-y-6">
+            <p className="text-sm text-[#6B7A99]">入力後にメールアプリが開きます。メールアプリで送信を完了してください。この画面だけでは送信されません。</p>
             <div>
               <label className="block text-sm font-bold text-[#1A2E5C] mb-2">
                 会社名 <span className="text-red-500">*</span>
@@ -144,7 +146,7 @@ export default function ContactPage() {
               whileTap={{ scale: 0.98 }}
             >
               <Send size={18} />
-              送信する
+              メールアプリを開く
             </motion.button>
             <p className="text-xs text-center text-[#6B7A99]">
               送信いただいた情報は、お問い合わせへの対応のみに使用します。
