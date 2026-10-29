@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
-    return { beforeFiles: [{ source: "/", destination: "/idm-home.html" }, { source: "/contact", destination: "/idm-contact.html" }, { source: "/privacy", destination: "/idm-privacy.html" }] }
+    return { beforeFiles: [{ source: "/", destination: "/idm-home.html" }, { source: "/contact", destination: "/idm-contact.html" }, { source: "/privacy", destination: "/idm-privacy.html" }, { source: "/ai-use-cases", destination: "/idm-ai-use-cases.html" }] }
   },
   images: {
     remotePatterns: [
