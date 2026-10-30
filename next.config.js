@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
-    return { beforeFiles: [{ source: "/", destination: "/idm-home.html" }, { source: "/contact", destination: "/idm-contact.html" }, { source: "/privacy", destination: "/idm-privacy.html" }, { source: "/ai-use-cases", destination: "/idm-ai-use-cases.html" }, { source: "/ai-work/talk", destination: "/idm-work-talk.html" }, { source: "/ai-work/proposal", destination: "/idm-work-proposal.html" }, { source: "/ai-work/handoff", destination: "/idm-work-handoff.html" }, { source: "/ai-work/manual", destination: "/idm-work-manual.html" }, { source: "/ai-work/report", destination: "/idm-work-report.html" }] }
+    return { beforeFiles: [{ source: "/", destination: "/idm-home.html" }, { source: "/contact", destination: "/idm-contact.html" }, { source: "/privacy", destination: "/idm-privacy.html" }] }
   },
   images: {
     remotePatterns: [
